@@ -61,7 +61,7 @@ module.exports = {
                 const color = changePercent >= 0 ? Colors.Green : Colors.Red;
 
                 const embed = new EmbedBuilder()
-                    .setTitle(`${priceData.longName || priceData.shortName} (${symbol})`)
+                    .setTitle(`${priceData.longName || priceData.shortName} (${priceData.symbol})`)
                     .addFields(
                         { name: 'Price', value: `$${price.toFixed(2)}`, inline: true },
                         { name: 'Change', value: `${changeSign}${(changePercent).toFixed(2)}%`, inline: true }

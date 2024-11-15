@@ -31,6 +31,10 @@ const Position = sequelize.define('Position', {
     onDelete: 'CASCADE',
     onUpdate: 'CASCADE',
   },
+  position_type: {
+    type: DataTypes.ENUM('long', 'short'),
+    allowNull: false,
+  },
   quantity: {
     type: DataTypes.DECIMAL(18, 8),
     allowNull: false,
@@ -38,16 +42,12 @@ const Position = sequelize.define('Position', {
       min: 0,
     },
   },
-  average_price_per_share: {
+  price_per_share: {
     type: DataTypes.DECIMAL(18, 8),
     allowNull: false,
     validate: {
       min: 0,
     },
-  },
-  position_type: {
-    type: DataTypes.ENUM('long', 'short'),
-    allowNull: false,
   },
   status: {
     type: DataTypes.ENUM('open', 'closed'),

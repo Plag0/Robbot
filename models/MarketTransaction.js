@@ -42,6 +42,10 @@ const MarketTransaction = sequelize.define('MarketTransaction', {
     onDelete: 'CASCADE',
     onUpdate: 'CASCADE',
   },
+  position_type: {
+    type: DataTypes.ENUM('long', 'short'),
+    allowNull: false,
+  },
   quantity: {
     type: DataTypes.DECIMAL(18, 8),
     allowNull: false,
@@ -62,10 +66,6 @@ const MarketTransaction = sequelize.define('MarketTransaction', {
   },
   transaction_type: {
     type: DataTypes.ENUM('open', 'close', 'partial_close'),
-    allowNull: false,
-  },
-  position_type: {
-    type: DataTypes.ENUM('long', 'short'),
     allowNull: false,
   },
   fee: {
